@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كل يوم جَذَل</title>
+    <style>
+      @font-face {
+        font-family: "29ltbukrabold";
+        src: url("./29ltbukrabold.otf") format("opentype");
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .secondary-header-color {
+        color: #0ace82;
+      }
+
+      .secondary-bg-color {
+        background: #e51a4b;
+      }
+
+      .border {
+        border: 1px solid white;
+        border-radius: 4px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "29ltbukrabold";
+        background: #151529;
+        font-size: 14px;
+        margin: 0;
+        text-align: center;
+        height: 100vh;
+        color: white;
+      }
+
+      /* Name form */
+      aside {
+        position: absolute;
+        top: 25vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+        background: white;
+        color: black;
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 1px 1px 10px 10px rgba(0, 0, 0, 0.25),
+          -1px -1px 10px 10px rgba(0, 0, 0, 0.25);
+      }
+
+      aside .logo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85px;
+        height: 85px;
+        margin: auto;
+        border-radius: 50%;
+        background: #151529;
+        box-shadow: -1px -10px 10px 10px rgba(0, 0, 0, 0.25);
+        border: 2px solid white;
+      }
+
+      aside .logo img {
+        width: 100%;
+        margin-top: 3px;
+      }
+
+      aside #nameField {
+        direction: rtl;
+        text-align: center;
+        font-weight: bold;
+        font-family: "29ltbukrabold";
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #151529;
+        border-radius: 4px;
+      }
+
+      aside h3 {
+        margin-top: 2.5rem;
+      }
+
+      aside button {
+        font-family: "29ltbukrabold";
+        margin-top: 1rem;
+        padding: 0.75rem 2rem;
+        color: white;
+        border: none;
+      }
+
+      /* main section */
+
+      main h3 {
+        margin-top: 2rem;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin: 0 2rem;
+        padding: 0.75rem 0;
+      }
+
+      #hekma {
+        margin: 1.5rem 2rem;
+        padding: 1rem;
+      }
+
+      #hekma h2 {
+        margin: 0;
+      }
+
+      #hekma p {
+        font-size: 18px;
+        margin: 2rem 0;
+        line-height: 1.5;
+      }
+
+      #remaining {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #time {
+        margin: 0 0.5rem;
+        padding: 0.5rem;
+        background: #61a375;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+
+      #time span {
+        margin: 0 0.25rem;
+      }
+
+      #ad {
+        margin: 1.5rem auto;
+        width: 280px;
+        height: 280px;
+      }
+
+      #ad img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <aside class="hidden">
+      <div class="logo">
+        <img src="img/logo.png" alt="Jazal" />
+      </div>
+      <h3>يرجى إدخال إسمك الأول</h3>
+      <input type="text" id="nameField" />
+      <button class="secondary-bg-color" id="submit-name">متابعة</button>
+    </aside>
+    <main class="hidden">
+      <img src="img/logo.png" width="240" height="170" alt="Computer Hope" />
+      <h3 class="secondary-header-color">صور الشاشة وشاركها مع من يهتمون</h3>
+      <h1 class="border secondary-bg-color">كل يوم نصوص من أجلك</h1>
+      <section id="hekma" class="border">
+        <h2 class="secondary-header-color">
+          جذل بتقول ليك يا <span id="embed-name"></span>
+        </h2>
+      </section>
+      <div id="remaining"></div>
+      <section id="ad-section">
+        <img
+          src="https://whispering-citadel-85868.herokuapp.com/ad"
+          alt="مساحة إعلانية"
+          id="ad"
+        />
+      </section>
+    </main>
+    <script>
+      !(function(e) {
+        var t = {};
+        function n(a) {
+          if (t[a]) return t[a].exports;
+          var o = (t[a] = { i: a, l: !1, exports: {} });
+          return e[a].call(o.exports, o, o.exports, n), (o.l = !0), o.exports;
+        }
+        (n.m = e),
+          (n.c = t),
+          (n.d = function(e, t, a) {
+            n.o(e, t) ||
+              Object.defineProperty(e, t, { enumerable: !0, get: a });
+          }),
+          (n.r = function(e) {
+            "undefined" != typeof Symbol &&
+              Symbol.toStringTag &&
+              Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
+              Object.defineProperty(e, "__esModule", { value: !0 });
+          }),
+          (n.t = function(e, t) {
+            if ((1 & t && (e = n(e)), 8 & t)) return e;
+            if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+            var a = Object.create(null);
+            if (
+              (n.r(a),
+              Object.defineProperty(a, "default", { enumerable: !0, value: e }),
+              2 & t && "string" != typeof e)
+            )
+              for (var o in e)
+                n.d(
+                  a,
+                  o,
+                  function(t) {
+                    return e[t];
+                  }.bind(null, o)
+                );
+            return a;
+          }),
+          (n.n = function(e) {
+            var t =
+              e && e.__esModule
+                ? function() {
+                    return e.default;
+                  }
+                : function() {
+                    return e;
+                  };
+            return n.d(t, "a", t), t;
+          }),
+          (n.o = function(e, t) {
+            return Object.prototype.hasOwnProperty.call(e, t);
+          }),
+          (n.p = ""),
+          n((n.s = 0));
+      })([
+        function(e, t) {
+          const n = document.getElementsByTagName("main")[0],
+            a = document.getElementsByTagName("aside")[0];
+          localStorage.name
+            ? ((document.getElementById("embed-name").innerText =
+                localStorage.name),
+              n.classList.remove("hidden"))
+            : a.classList.remove("hidden");
+          document
+            .getElementById("submit-name")
+            .addEventListener("click", () => {
+              (localStorage.name = document.getElementById("nameField").value),
+                (document.getElementById("embed-name").innerText =
+                  localStorage.name),
+                a.classList.add("hidden"),
+                n.classList.remove("hidden");
+            });
+          const o = document.getElementById("hekma"),
+            r = document.getElementById("remaining");
+          let l;
+          (async () => {
+            const e = await fetch(
+                "https://dry-waters-17965.herokuapp.com/link"
+              ),
+              t = await e.json();
+            l = t.link;
+            const n = new Date().getTime();
+            if (localStorage.hekma && localStorage.expiry > n)
+              o.innerHTML += `<p>${localStorage.hekma}</p>`;
+            else {
+              localStorage.removeItem("hekma"),
+                localStorage.removeItem("expiry");
+              const e = await fetch(
+                  "https://dry-waters-17965.herokuapp.com/daily-hekma",
+                  { method: "GET" }
+                ),
+                { text: t } = await e.json();
+              (o.innerHTML += `<p>${t}</p>`),
+                (localStorage.hekma = t),
+                (localStorage.expiry = n + 864e5);
+            }
+            const a = setInterval(() => {
+              const e = Math.floor(
+                  (localStorage.expiry - new Date().getTime()) / 1e3
+                ),
+                t = Math.floor(e / 60 / 60),
+                n = Math.floor((e / 60) % 60),
+                o = e % 60;
+              (r.innerHTML = `\n      الجذل القادم بعد <span id="time">\n      ${
+                1 == String(t).length ? "0" + t : t
+              }<span>:</span>${
+                1 == String(n).length ? "0" + n : n
+              }<span>:</span>${
+                1 == String(o).length ? "0" + o : o
+              }\n      </span>\n    `),
+                0 == t &&
+                  0 == n &&
+                  0 == o &&
+                  (clearInterval(a),
+                  (r.innerHTML = "قم بتحديث الصفحة  لرؤية جذل اليوم"));
+            }, 1e3);
+          })(),
+            document
+              .getElementById("ad-section")
+              .addEventListener("click", async () => {
+                window.open(l, "_blank");
+              });
+        }
+      ]);
+    </script>
+  </body>
+</html>
